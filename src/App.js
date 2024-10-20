@@ -1,23 +1,25 @@
 import logo from './logo.svg';
 import './App.css';
+import Counter from './components/counter';
+import Show from './components/visible';
+import Timer from './components/timer';
+import RefExample from './components/ref';
+import MessagesList from './components/list';
+import CommentsList from './components/commentsList';
 
-function App() {
+function App(props) {
+  const topPosition = '40px';
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+       
+        <h3>Hello, {props.name}</h3>
+        <Timer />
+        <RefExample />
+        <Counter />
+        <Show data="Любой текст внутри параграфа"/>
+        <Show data="Другой текст из компонента"/>
+        <CommentsList />
+        <MessagesList />
     </div>
   );
 }
